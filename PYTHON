@@ -1,0 +1,123 @@
+1. find the sum of elements in the list
+
+list=[1,2,3,4,5]
+total_sum=sum(list)
+print(total_sum)
+
+
+2. largest element in the list
+
+list = [1, 2, 3, 4, 5]
+largest_element = max(list)
+print(largest_element)
+
+
+3. Remove duplicates in a list
+
+list=[1,2,2,3,4,4,5]
+unique_list=[]
+for i in list:
+  if i not in unique_list:
+    unique_list.append(i)
+print(unique_list)
+
+4. check if all elements in a list are unique
+
+
+
+def are_elements_unique(list_):
+  return len(list_) == len(set(list_))
+
+list_ = [1, 2, 3, 4, 5]
+if are_elements_unique(list_):
+  print("All elements in the list are unique")
+else:
+  print("Not all elements in the list are unique")
+
+
+5. program to reverse list
+
+list_ = [1, 2, 3, 4, 5]
+reversed_list = list_[::-1]
+print(reversed_list)
+
+
+6. count no. of odd and even numbers in a list
+
+def count_odd_even(list_):
+  even_count = 0
+  odd_count = 0
+  for num in list_:
+    if num % 2 == 0:
+      even_count += 1
+    else:
+      odd_count += 1
+  return even_count, odd_count
+
+list_ = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+even_count, odd_count = count_odd_even(list_)
+print("Number of even numbers:", even_count)
+print("Number of odd numbers:", odd_count)
+
+
+7. check if a list is subset of another list
+
+def is_subset(list1, list2):
+  return set(list1).issubset(set(list2))
+
+list1 = [1, 2, 3]
+list2 = [1, 2, 3, 4, 5]
+
+if is_subset(list1, list2):
+  print("list1 is a subset of list2")
+else:
+  print("list1 is not a subset of list2")
+
+
+8. max difference between two consecutive elements in a list
+
+def max_consecutive_difference(list_):
+  if len(list_) < 2:
+    return 0
+  max_diff = 0
+  for i in range(len(list_) - 1):
+    diff = abs(list_[i+1] - list_[i])
+    if diff > max_diff:
+      max_diff = diff
+  return max_diff
+
+list_ = [1, 2, 3, 4, 5]
+max_diff = max_consecutive_difference(list_)
+print("Maximum difference between two consecutive elements:", max_diff)
+
+
+9. merge multiple dictionaries
+
+# prompt: merge multiple dictionaries
+
+def merge_dictionaries(dict_list):
+  merged_dict = {}
+  for dict_ in dict_list:
+    merged_dict.update(dict_)
+  return merged_dict
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'd': 4}
+dict3 = {'e': 5, 'f': 6}
+
+dict_list = [dict1, dict2, dict3]
+merged_dict = merge_dictionaries(dict_list)
+print("Merged dictionary:", merged_dict)
+
+
+10. find words frequency in a sentence
+
+sentence = "This is a sentence to find the frequency of words in a sentence."
+words = sentence.split()
+frequency = {}
+for word in words:
+  if word in frequency:
+    frequency[word] += 1
+  else:
+    frequency[word] = 1
+print(frequency)
